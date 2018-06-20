@@ -4,11 +4,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Tara &amp; Chris's Book App</title>
-  <link rel="stylesheet" href="styles/normalize.css">
-  <link rel="stylesheet" href="styles/icons.css">
-  <link rel="stylesheet" href="styles/base.css">
-  <link rel="stylesheet" href="styles/layout.css">
-  <link rel="stylesheet" href="styles/modules.css">
+  <link rel="stylesheet" type="text/css" href="styles/reset.css">
+  <link rel="stylesheet" type="text/css" href="styles/icons.css">
+  <link rel="stylesheet" type="text/css" href="styles/base.css">
+  <link rel="stylesheet" type="text/css" href="styles/layout.css">
+  <link rel="stylesheet" type="text/css" href="styles/modules.css">
   <script id="book-list-template" type="text/x-handlebars-template">
     <article class="clearfix">
       <header>
@@ -28,12 +28,12 @@
     <h2>My Books</h2>
   </header>
   <main>
-
-    <section id="books" class="tab-content">
-      <div id="book-count"></div>
-      
-    </section>
-    <section id="about" class="tab-content">
+    <section class="book-view">
+      <section id="book-list" class="tab-content">
+        <div id="book-count"></div>
+      </section>
+    </section><!-- .book-view -->
+      <section id="about" class="tab-content">
         <header>
           Welcome to Tara &amp; Chris' Book App
         </header>
@@ -53,8 +53,17 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="scripts/index.js"></script>
-    <!-- <script src="scripts/articleView.js"></script> -->
-    <!-- <script> -->
+    <script src="scripts/models/book.js"></script>
+    <script src="scripts/views/book-view.js"></script>
+    <script src="scripts/views/error-view.js"></script>
+  <script> 
+      $( document ).ready(function() {
+      console.log( "document ready!" );
+      app.Book.fetchAll(app.bookView.initIndexPage());
+    });
+
+  </script>
+
       <!-- app.Article.fetchAll(app.articleView.initIndexPage); -->
       <!-- </script> -->
 </body>

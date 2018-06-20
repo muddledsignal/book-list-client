@@ -1,30 +1,28 @@
 'use strict'; 
 
+var app = app || {}; 
 
-// This section to be dealt with on Tuesday lecture 
-// (function(){
-//   // are .showOnly and .render methods on Books, or higher up in our stack? 
-//   Books.showOnly  = function () {
-//     //  reveal the containers of your single-page app.
-//   }
-//   Books.render = function () { // huh? also done in .toHtml ?
-//     let template = Handlebars.compile($('#book-template').text()); 
-//     return template(this); 
-//   }
-// })(); // end of first IIFE
-// above section to be dealt with on Tuesday lecture
+(function(module){ // start of IIFE
 
-(function(){
+let productionApiUrl = 'insert cloud API server url here';
+let developmentApiUrl = 'http://localhost:3000'
+module.isProduction = /^(?!localhost|127)/.test(window.location.hostname); 
 
-  function Books (rawDataObj) { // TODO?: refactor to .map? 
-    Object.keys(rawDataObj).forEach(key => {
-      this[key] = rawDataObj[key]
-    }, this);
-  }
-  })(); // end of second IIFE
+module.ENVIRONMENT = {
+  apiUrl: module.isProduction ? productionApiUrl : developmentApiUrl
+};
 
-  Book.prototype.toHtml = function () {
-    let template = Handlebars.compile($('#book-list-template').text()); 
-    return template(this); 
-  }
-Book.all = []; 
+module.showOnly = (selector) => {
+  $('.container').hide();
+  $('.nav-menu').slideUp(350);
+  $(selector).show();
+}
+
+module.render = (templateId, data) => {
+  if (!module.taskTemplate) {
+    module.taskTemplate = Handlebars.compile($(`#${templateId}`).text()); 
+  }  // A: No. Q? does compile need quotes around the #id it is passed? 
+  return module.taskTemplate(data);
+}
+
+})(app); // end of IIFE
