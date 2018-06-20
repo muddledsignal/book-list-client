@@ -1,16 +1,62 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tara &amp; Chris's Book App</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tara &amp; Chris's Book App</title>
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/icons.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/modules.css">
+  <script id="book-list-template" type="text/x-handlebars-template">
+    <article class="clearfix">
+      <header>
+        <img src="{{image_url}}" /> 
+        <h1>{{title}}</h1>
+          <address>{{author}}</address>
+      </header>
+      <section>
+      </section>  
+    </article>
+  </script>
 </head>
 
 <body>
+  <header>
     <h1>Tara &amp; Chris's Book App</h1>
+    <h2>My Books</h2>
+  </header>
+  <main>
 
+    <section id="books" class="tab-content">
+      <div id="book-count"></div>
+      
+    </section>
+    <section id="about" class="tab-content">
+        <header>
+          Welcome to Tara &amp; Chris' Book App
+        </header>
+        <section>
+          <h1>Some of my interests:</h1>
+          <ul>
+            <li>Coding</li>
+            <li>Sharing what I've learned</li>
+            <li>Hanging with my family</li>
+          </ul>
+        </section>
+      </section>    
+  </main>
+  <footer>
+
+  </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script src="scripts/index.js"></script>
+    <!-- <script src="scripts/articleView.js"></script> -->
+    <!-- <script> -->
+      <!-- app.Article.fetchAll(app.articleView.initIndexPage); -->
+      <!-- </script> -->
 </body>
 
 </html>
