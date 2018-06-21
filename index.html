@@ -21,12 +21,12 @@
     </article>
   </script>
   <script id="error-template" type="text/x-handlebars-template">
-    <article id="{{error-message}}" class="clearfix">
+    <article id="{{errormessage}}" class="clearfix">
       <header>
         <h1>Error!</h1>
       </header>
       <section>
-        <p>{{error-message}}</p>
+        <p>{{errormessage}}</p>
       </section>  
     </article>
   </script>
@@ -38,14 +38,16 @@
     <h2>My Books</h2>
   </header>
   <main>
-    <section class="book-view">
-      <section id="book-list" class="tab-content">
+    <section class="book-view container">
+            <section id="book-list" class="tab-content">
         <div id="book-count"></div>
       </section>
     </section><!-- .book-view -->
-    <section id="error-view"></section><!-- instructions said to use class not id-->
+    <section id="error-view" class="container" >
+      <h1>This is our error view! </h1> 
+    </section><!-- instructions said to use class not id-->
 
-    <section id="about" class="tab-content">
+    <section id="about" class="tab-content container">
       <header>
         Welcome to Tara &amp; Chris' Book App
       </header>
@@ -58,6 +60,7 @@
         </ul>
       </section>
     </section>    
+
   </main>
   <footer>
 

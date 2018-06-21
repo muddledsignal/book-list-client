@@ -19,6 +19,9 @@ module.showOnly = (selector) => {
 }
 
 module.render = (templateId, data) => {
+  if (templateId === 'error-template') {
+    module.taskTemplate = Handlebars.compile($(`#${templateId}`).text()); 
+  }
   if (!module.taskTemplate) {
     module.taskTemplate = Handlebars.compile($(`#${templateId}`).text()); 
   }  
