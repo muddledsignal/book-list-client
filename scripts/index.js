@@ -4,7 +4,7 @@ var app = app || {};
 
 (function(module){ // start of IIFE
 
-let productionApiUrl = 'insert cloud API server url here';
+let productionApiUrl = 'https://tara-chris-booklist.herokuapp.com';
 let developmentApiUrl = 'http://localhost:3000'
 module.isProduction = /^(?!localhost|127)/.test(window.location.hostname); 
 
