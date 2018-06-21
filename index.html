@@ -20,6 +20,20 @@
       </section>  
     </article>
   </script>
+  <script id="one-book-template" type="text/x-handlebars-template">
+    <article class="clearfix">
+      <header>
+        <h1>{{title}}</h1>
+        <address>{{author}}</address>
+        <address>isbn {{isbn}}</address>
+        <img src="{{image_url}}" /> 
+      </header>
+      <section>
+        <p>{{description}}</p>
+      </section>  
+    </article>
+  </script>
+  
   <script id="error-template" type="text/x-handlebars-template">
     <article id="{{errormessage}}" class="clearfix">
       <header>
@@ -46,7 +60,12 @@
     <section id="error-view" class="container" >
       <h1>This is our error view! </h1> 
     </section><!-- instructions said to use class not id-->
+    <section class="one-book container">
+      <h1>One Book View!</h1>
+    </section>
+    <section class="add-book container"> 
 
+    </section>
     <section id="about" class="tab-content container">
       <header>
         Welcome to Tara &amp; Chris' Book App

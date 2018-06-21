@@ -26,6 +26,10 @@ var app = app || {};
     Book.all = rows.map(bookObj => new Book(bookObj)); 
   }
 
+  Book.loadOne = rows => {
+    Book.now = new Book[rows[0]];  
+  }
+
   Book.fetchAll = callback => {
    $.get(`${module.ENVIRONMENT.apiUrl}/api/v1/books`)
      .then(results => {
@@ -33,7 +37,14 @@ var app = app || {};
        callback();
      }).catch(err => console.log(err) ); 
   };
-  
+  Book.fetchOne = callback => {
+    $.get(`${module.ENVIRONMENT.apiUrl}/api/v1/books/:id`)
+    .then(results => {
+      Book.loadOne(results);
+      callback();
+    }).catch(err => console.log(err) ); 
+ };
+   
   module.Book = Book; 
 })(app); // end of second IIFE
 
