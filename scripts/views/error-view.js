@@ -1,5 +1,11 @@
 'use strict'; 
+var app = app || {};
 
-errorView.initErrorPage(err) {
-
-} // end errorView.initErrorPage
+(function(module){
+  let errorView = {}; 
+  errorView.initErrorPage = err => {
+    // setup the error page, yo! 
+  } // end errorView.initErrorPage
+  
+  module.errorView = errorView; 
+})(app); // end IIFE
