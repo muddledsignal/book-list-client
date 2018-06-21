@@ -27,7 +27,7 @@ var app = app || {};
   }
 
   Book.fetchAll = callback => {
-   $.get('/api/v1/books')
+   $.get(`${module.ENVIRONMENT.apiUrl}/api/v1/books`)
      .then(results => {
        Book.loadAll(results);
        callback();
@@ -36,3 +36,4 @@ var app = app || {};
   
   module.Book = Book; 
 })(app); // end of second IIFE
+

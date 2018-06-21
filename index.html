@@ -54,12 +54,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="scripts/index.js"></script>
     <script src="scripts/models/book.js"></script>
+    <script src="scripts/views/home-view.js"></script>
     <script src="scripts/views/book-view.js"></script>
     <script src="scripts/views/error-view.js"></script>
   <script> 
       $( document ).ready(function() {
       console.log( "document ready!" );
-      app.Book.fetchAll(app.bookView.initIndexPage());
+      app.Book.fetchAll(app.bookView.initIndexPage);
     });
 
   </script>

@@ -21,8 +21,13 @@ module.showOnly = (selector) => {
 module.render = (templateId, data) => {
   if (!module.taskTemplate) {
     module.taskTemplate = Handlebars.compile($(`#${templateId}`).text()); 
-  }  // A: No. Q? does compile need quotes around the #id it is passed? 
+  }  
   return module.taskTemplate(data);
+}
+
+module.errCallback = err => {
+  console.log(err); 
+  module.errorView.initErrorPage(err); 
 }
 
 })(app); // end of IIFE
