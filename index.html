@@ -20,6 +20,16 @@
       </section>  
     </article>
   </script>
+  <script id="error-template" type="text/x-handlebars-template">
+    <article id="{{errormessage}}" class="clearfix">
+      <header>
+        <h1>Error!</h1>
+      </header>
+      <section>
+        <p>{{errormessage}}</p>
+      </section>  
+    </article>
+  </script>
 </head>
 
 <body>
@@ -28,24 +38,29 @@
     <h2>My Books</h2>
   </header>
   <main>
-    <section class="book-view">
-      <section id="book-list" class="tab-content">
+    <section class="book-view container">
+            <section id="book-list" class="tab-content">
         <div id="book-count"></div>
       </section>
     </section><!-- .book-view -->
-      <section id="about" class="tab-content">
-        <header>
-          Welcome to Tara &amp; Chris' Book App
-        </header>
-        <section>
-          <h1>Some of my interests:</h1>
-          <ul>
-            <li>Coding</li>
-            <li>Sharing what I've learned</li>
-            <li>Hanging with my family</li>
-          </ul>
-        </section>
-      </section>    
+    <section id="error-view" class="container" >
+      <h1>This is our error view! </h1> 
+    </section><!-- instructions said to use class not id-->
+
+    <section id="about" class="tab-content container">
+      <header>
+        Welcome to Tara &amp; Chris' Book App
+      </header>
+      <section>
+        <h1>Some of my interests:</h1>
+        <ul>
+          <li>Coding</li>
+          <li>Sharing what I've learned</li>
+          <li>Hanging with my family</li>
+        </ul>
+      </section>
+    </section>    
+
   </main>
   <footer>
 
