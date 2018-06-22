@@ -27,7 +27,8 @@ var app = app || {};
   }
 
   Book.loadOne = rows => {
-    Book.now = new Book[rows[0]];  
+    console.log(`we are in load One with ${rows}`); 
+    Book.now = new Book(rows[0]);  
   }
 
   Book.fetchAll = callback => {
@@ -37,9 +38,12 @@ var app = app || {};
        callback();
      }).catch(err => console.log(err) ); 
   };
-  Book.fetchOne = callback => {
-    $.get(`${module.ENVIRONMENT.apiUrl}/api/v1/books/:id`)
+  Book.fetchOne = (id, callback) => {
+    console.log('We are in Fetch One! '); 
+    $.get(`${module.ENVIRONMENT.apiUrl}/api/v1/books/${id}`)
     .then(results => {
+      // console.log(`fetchOne got a response: ${results}`); 
+
       Book.loadOne(results);
       callback();
     }).catch(err => console.log(err) ); 

@@ -9,8 +9,8 @@ var app = app || {};
   module.bookView.initOneBook = () => {
     app.showOnly('.one-book'); 
     // which book are we looking for? this will be a down below
-    let a = 1; // uhh, this should be the :id we are looking for! 
-    $('.one-book').append(a.toHtml());
+    // let a = ; // uhh, this should be the :id we are looking for! 
+    $('.one-book')[0].append(module.Book.now.toHtml());
     
   }; // end bookView.initOneBook
 
