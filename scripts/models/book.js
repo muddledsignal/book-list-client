@@ -27,7 +27,6 @@ var app = app || {};
   }
 
   Book.loadOne = rows => {
-    console.log(`we are in load One with ${rows}`); 
     Book.now = new Book(rows[0]);  
   }
 

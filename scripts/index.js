@@ -33,4 +33,21 @@ module.errCallback = err => {
   module.errorView.initErrorPage(err); 
 }
 
+// $('#thebutton').on('click', handleForm);
+
+// function handleForm(event){
+//   event.preventDefault();
+//   console.log('clicky');
+//   let formData = {};
+//   formData.author = $('#author').val();
+//   formData.title = $('#title').val();
+//   formData.isbn = $('#isbn').val();
+//   formData.imageUrl = $('#image-url').val();
+//   formData.description = $('#description').val();
+//   console.log(formData);
+//   $.post('http://localhost:4000/api/v1/books', formData)
+//   .then(data => console.log(data));
+// }
+
+
 })(app); // end of IIFE
