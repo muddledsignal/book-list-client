@@ -68,3 +68,7 @@
 .icon-github:before {
 	content: "\e907";
 }
+
+.icon-linkedin:before {
+	content: "\eac9"
+}
