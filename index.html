@@ -55,31 +55,28 @@
           <h1>Tara &amp; Chris's Book App</h1>
       </section>
       <nav>
-          <!-- <div class="icon-menu"></div> -->
-          <!-- <ul>
-            <li class="tab"><a href="#">My books</a></li>
-            <li class="tab"><a href="#">Admin</a></li>
-          </ul> -->
-          <ul>
-            <li><a href="#">My books</a></li>
-            <!-- <li><a href="#">Admin</a></li> -->
-          </ul>
+        <ul>
+          <li class="tab"><a id="all-books" href="#">View All Books</a></li>
+          <li class="tab"><a id="add-book" href="#">Add a New Book</a></li>
+        </ul>
       </nav>
     </header>
 
-    <!-- Main -->
     <main class="clearfix">
       <section class="book-view container">
         <section id="book-list"></section>
         <div id="book-count"></div> <!--displays below book info -->
       </section><!-- book-view -->
       
-      <section id="error-view" class="container" >
+      <section class="error-view container" >
         <h1>This is our error view! </h1> 
       </section><!-- instructions said to use class not id-->
       
       <section class="one-book container">
         <h1>One Book View!</h1>
+        <section id="one-book-holder">
+          <p>Static text here</p>
+        </section>
       </section>
 
       <section class="add-book container" id="form-view">

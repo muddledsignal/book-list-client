@@ -5,9 +5,9 @@ var app = app || {};
   // let error-view = {};
   let errorView = {};
   errorView.initErrorPage = err => {
-    module.showOnly('#error-view');
+    module.showOnly('.error-view');
     let output = module.render('error-template', err);
-    $('#error-view').append(output);
+    $('.error-view').append(output);
     // setup the error page, yo!
   } // end errorView.initErrorPage
 

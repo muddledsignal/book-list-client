@@ -19,10 +19,7 @@ var app = app || {};
   }
 
   module.render = (templateId, data) => {
-    if (templateId === 'error-template') {
-      module.taskTemplate = Handlebars.compile($(`#${templateId}`).text());
-    }
-    if (!module.taskTemplate) {
+    if (templateId === 'one-book-template' || templateId === 'error-template' || !module.taskTemplate) {
       module.taskTemplate = Handlebars.compile($(`#${templateId}`).text());
     }
     return module.taskTemplate(data);
