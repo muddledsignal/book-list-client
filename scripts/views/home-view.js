@@ -1,16 +1,15 @@
-'use strict'; 
-var app = app || {}; 
+'use strict';
+var app = app || {};
 
-(function(module) {
+(function (module) {
 
-  let bookView = {}; 
-  
+  let bookView = {};
+
   bookView.initIndexPage = () => { // TODO: refactor to use module.showonly
-    app.showOnly('.book-view'); 
+    app.showOnly('.book-view');
     app.Book.all.map(a => $('#book-list').append(a.toHtml()));
-    
+
   }; // end bookView.initIndexPage
-  module.bookView = bookView; 
+  module.bookView = bookView;
 
 })(app); // end IIFE
-

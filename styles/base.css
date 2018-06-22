@@ -1,0 +1,12 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  width: 480px;
+  margin: 0 auto 20px auto;
+}
+
+main {
+  padding: 20px;
+}

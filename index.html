@@ -9,17 +9,17 @@
   <link rel="stylesheet" type="text/css" href="styles/base.css">
   <link rel="stylesheet" type="text/css" href="styles/layout.css">
   <link rel="stylesheet" type="text/css" href="styles/modules.css">
+  
+  <!-- Book List Template (all) -->
   <script id="book-list-template" type="text/x-handlebars-template">
-    <article class="clearfix">
-      <header>
-        <img src="{{image_url}}" /> 
-        <h1>{{title}}</h1>
-          <address>{{author}}</address>
-      </header>
-      <section>
-      </section>  
-    </article>
+    <div>
+      <img src="{{image_url}}" />
+      <h1 class="title">{{title}}</h1>
+      <address>{{author}}</address>
+    </div>
   </script>
+
+  <!-- Single Book Template -->
   <script id="one-book-template" type="text/x-handlebars-template">
     <article class="clearfix">
       <header>
@@ -34,6 +34,7 @@
     </article>
   </script>
   
+  <!-- Error Template -->
   <script id="error-template" type="text/x-handlebars-template">
     <article id="{{errormessage}}" class="clearfix">
       <header>
@@ -47,43 +48,75 @@
 </head>
 
 <body>
-  <header>
-    <h1>Tara &amp; Chris's Book App</h1>
-    <h2>My Books</h2>
-  </header>
-  <main>
-    <section class="book-view container">
-            <section id="book-list" class="tab-content">
-        <div id="book-count"></div>
-      </section>
-    </section><!-- .book-view -->
-    <section id="error-view" class="container" >
-      <h1>This is our error view! </h1> 
-    </section><!-- instructions said to use class not id-->
-    <section class="one-book container">
-      <h1>One Book View!</h1>
-    </section>
-    <section class="add-book container"> 
-
-    </section>
-    <section id="about" class="tab-content container">
-      <header>
-        Welcome to Tara &amp; Chris' Book App
-      </header>
+  <div id="content">
+    <!-- Header -->
+    <header>
       <section>
-        <h1>Some of my interests:</h1>
-        <ul>
-          <li>Coding</li>
-          <li>Sharing what I've learned</li>
-          <li>Hanging with my family</li>
-        </ul>
+          <h1>Tara &amp; Chris's Book App</h1>
       </section>
-    </section>    
+      <nav>
+          <!-- <div class="icon-menu"></div> -->
+          <!-- <ul>
+            <li class="tab"><a href="#">My books</a></li>
+            <li class="tab"><a href="#">Admin</a></li>
+          </ul> -->
+          <ul>
+            <li><a href="#">My books</a></li>
+            <!-- <li><a href="#">Admin</a></li> -->
+          </ul>
+      </nav>
+    </header>
 
-  </main>
-  <footer>
+    <!-- Main -->
+    <main class="clearfix">
+      <section class="book-view container">
+        <section id="book-list"></section>
+        <div id="book-count"></div> <!--displays below book info -->
+      </section><!-- book-view -->
+      
+      <section id="error-view" class="container" >
+        <h1>This is our error view! </h1> 
+      </section><!-- instructions said to use class not id-->
+      
+      <section class="one-book container">
+        <h1>One Book View!</h1>
+      </section>
 
-  </footer>
+      <section class="add-book container" id="form-view">
+        <form>
+          <fieldset>
+            <legend>Add a new book</legend>
+            <legend>Title:<input id="title" type="text"></legend>
+            <legend>Author:<input id="author" type="text"></legend>
+            <legend>ISBN:<input id="isbn" type="text"></legend>
+            <legend>Image URL:<input id="image-url" type="text"></legend>
+            <legend>Description:<input id="description" type="text"></legend>
+            <button id"thebutton">Submit a new book</button>
+          </fieldset>
+        </form>
+      </section>
+    
+      <section id="about" class="tab-content container">
+        <!-- <header>Welcome to Tara &amp; Chris' Book App</header> -->
+        <section>
+          <h1>Some of my interests:</h1>
+          <ul>
+            <li>Coding</li>
+            <li>Sharing what I've learned</li>
+            <li>Hanging with my family</li>
+          </ul>
+        </section>
+      </section>    
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <ul>
+        <li class="icon-github"></li>
+        <li class="icon-rocket"></li>
+      </ul>
+    </footer>
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="scripts/index.js"></script>
@@ -91,16 +124,15 @@
     <script src="scripts/views/home-view.js"></script>
     <script src="scripts/views/book-view.js"></script>
     <script src="scripts/views/error-view.js"></script>
-  <script> 
+    <script> 
       $( document ).ready(function() {
       console.log( "document ready!" );
       app.Book.fetchAll(app.bookView.initIndexPage);
-    });
+      });
+    </script>
 
-  </script>
-
-      <!-- app.Article.fetchAll(app.articleView.initIndexPage); -->
-      <!-- </script> -->
-</body>
-
+    <!-- app.Article.fetchAll(app.articleView.initIndexPage); -->
+    <!-- </script> -->
+  </div>
+</body> 
 </html>
