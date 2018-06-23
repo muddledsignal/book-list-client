@@ -17,7 +17,7 @@ var app = app || {};
       // let bookChoice = `${$(this).data('content')}`; 
 
     });
-    $('#book-count').append(`<p>Total Books: ${app.Book.all.length} </p>`);
+    $('#book-count').html(`<p>Total Books: ${app.Book.all.length} </p>`);
     $('#book-list').html('');
     app.Book.all.map(a => $('#book-list').append(a.toHtml()));
 

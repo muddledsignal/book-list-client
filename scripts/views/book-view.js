@@ -13,7 +13,7 @@ var app = app || {};
     
     // TODO: event listner for delete & update clicks. 
 
-    $('#one-book-holder').append(app.Book.now.toHtmlLong());
+    $('#one-book-holder').html(app.Book.now.toHtmlLong());
       // '<p> dynamic here is some text</p>'); 
       
       
