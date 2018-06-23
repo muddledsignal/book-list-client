@@ -11,6 +11,8 @@ var app = app || {};
     // which book are we looking for? this will be a down below
     // let a = ; // uhh, this should be the :id we are looking for!
     
+    // TODO: event listner for delete & update clicks. 
+
     $('#one-book-holder').append(app.Book.now.toHtmlLong());
       // '<p> dynamic here is some text</p>'); 
       

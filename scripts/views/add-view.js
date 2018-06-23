@@ -9,8 +9,9 @@ var app = app || {};
   module.bookView.initAddBookPage = () => {
     app.showOnly('.add-book');
     
-    // we need an listner for the form
-    // we need a path to INSERT a record in DB 
+
+    // TODO: we need an listner for the form
+    // TODO ELSEWHERE: we need a path to INSERT a record in DB 
   }; // end bookView.initAddBookPage
 
 })(app); // end IIFE

@@ -30,4 +30,18 @@ var app = app || {};
     module.errorView.initErrorPage(err);
   }
 
+  // TODO: event listner for navigation 
+  $('nav').on('click', '.tab', function(event) {
+    event.preventDefault();
+    console.log(` You clicked ${$(this).data('content')}`);
+    let link = `${$(this).data('content')}`; 
+    if (link === 'home') { app.bookView.initIndexPage();}
+    if (link === 'add-book') { app.bookView.initAddBookPage();}
+    if (link === 'about') { console.log('What You Talkin bout!'); }
+
+    // $(`#${$(this).data('content')}`).fadeIn();
+
+    
+  });
+
 })(app); // end of IIFE
