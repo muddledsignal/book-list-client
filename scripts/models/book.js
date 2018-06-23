@@ -16,6 +16,9 @@ var app = app || {};
   Book.prototype.toHtml = function() {
     return app.render('book-list-template', this);
   }
+  Book.prototype.toHtmlLong = function() {
+    return app.render('one-book-template', this); 
+  }
 
   Book.loadAll = rows => {
     rows.sort((a, b) => {
@@ -27,7 +30,6 @@ var app = app || {};
   }
 
   Book.loadOne = rows => {
-    console.log(`we are in load One with ${rows}`);
     Book.now = new Book(rows[0]);
   }
 
@@ -39,7 +41,6 @@ var app = app || {};
       }).catch(err => console.log(err));
   };
   Book.fetchOne = (id, callback) => {
-    console.log('We are in Fetch One! ');
     $.get(`${module.ENVIRONMENT.apiUrl}/api/v1/books/${id}`)
       .then(results => {
         // console.log(`fetchOne got a response: ${results}`);
