@@ -12,7 +12,7 @@
   
   <!-- Book List Template (all) -->
   <script id="book-list-template" type="text/x-handlebars-template">
-    <div>
+    <div id="{{book_id}}" class="book-in-list">
       <img src="{{image_url}}" />
       <h1 class="title">{{title}}</h1>
       <address>{{author}}</address>
@@ -65,8 +65,8 @@
 
     <main class="clearfix">
       <section class="book-view container">
+        <section id="book-count"></section> <!--displays below book info -->
         <section id="book-list"></section>
-        <div id="book-count"></div> <!--displays below book info -->
       </section><!-- book-view -->
       
       <section class="error-view container" >
@@ -93,8 +93,7 @@
         </form>
       </section>
     
-      <section id="about" class="tab-content container">
-        <!-- <header>Welcome to Tara &amp; Chris' Book App</header> -->
+      <section class="about container">
         <h1>Some of my interests:</h1>
         <ul>
           <li>Coding</li>
@@ -116,6 +115,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="scripts/index.js"></script>
     <script src="scripts/models/book.js"></script>
+    <script src="scripts/controller/routes.js"></script>
     <script src="scripts/views/home-view.js"></script>
     <script src="scripts/views/book-view.js"></script>
     <script src="scripts/views/error-view.js"></script>

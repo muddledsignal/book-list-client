@@ -37,7 +37,9 @@ var app = app || {};
     let link = `${$(this).data('content')}`; 
     if (link === 'home') { app.bookView.initIndexPage();}
     if (link === 'add-book') { app.bookView.initAddBookPage();}
-    if (link === 'about') { console.log('What You Talkin bout!'); }
+    if (link === 'about') { module.showOnly('.about'); 
+      
+      console.log('What You Talkin bout!'); }
 
     // $(`#${$(this).data('content')}`).fadeIn();
 
