@@ -46,3 +46,7 @@ footer {
   clear: both;
 }
 
+#book-list > div {
+  padding-top: 2.5em; 
+}
+

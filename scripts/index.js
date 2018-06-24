@@ -19,9 +19,9 @@ var app = app || {};
   }
 
   module.render = (templateId, data) => {
-    if (templateId === 'one-book-template' || templateId === 'error-template' || !module.taskTemplate) {
+    // if (templateId === 'one-book-template' || templateId === 'error-template' || !module.taskTemplate) {
       module.taskTemplate = Handlebars.compile($(`#${templateId}`).text());
-    }
+    // }
     return module.taskTemplate(data);
   }
 
@@ -35,9 +35,11 @@ var app = app || {};
     event.preventDefault();
     console.log(` You clicked ${$(this).data('content')}`);
     let link = `${$(this).data('content')}`; 
-    if (link === 'home') { app.bookView.initIndexPage();}
-    if (link === 'add-book') { app.bookView.initAddBookPage();}
-    if (link === 'about') { console.log('What You Talkin bout!'); }
+    if (link === 'home') { app.Book.fetchAll(app.bookView.initIndexPage);}
+    if (link === 'add-book') { app.bookView.initAddBookPage('new');}
+    if (link === 'about') { module.showOnly('.about'); 
+      
+      console.log('What You Talkin bout!'); }
 
     // $(`#${$(this).data('content')}`).fadeIn();
 
