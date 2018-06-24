@@ -67,6 +67,7 @@
       <section class="book-view container">
         <section id="book-count"></section> <!--displays below book info -->
         <section id="book-list"></section>
+
       </section><!-- book-view -->
       
       <section class="error-view container" >
@@ -74,9 +75,10 @@
       </section><!-- instructions said to use class not id-->
       
       <section class="one-book container">
-        <h1>One Book View!</h1>
-        <section id="one-book-holder">
-        </section>
+        <!-- One Book View! -->
+        <section id="one-book-holder"></section>
+          <button id="Modify" data-id="#">Change Details</button>
+          <button id="Delete" data-id="#">Delete</button>
       </section>
 
       <section class="add-book container" id="form-view">
@@ -88,7 +90,7 @@
             <legend>ISBN:<input id="isbn" type="text"></legend>
             <legend>Image URL:<input id="image-url" type="text"></legend>
             <legend>Description:<input id="description" type="text"></legend>
-            <button id"thebutton">Submit a new book</button>
+            <button id="submit">Submit a new book</button>
           </fieldset>
         </form>
       </section>

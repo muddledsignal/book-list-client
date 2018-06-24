@@ -1,3 +1,7 @@
-'use strict'; 
+// 'use strict'; 
 
-// let app = app || {}; 
+// var app = app || {}; 
+
+// (function(console){ // Start of IIFE
+
+// })(app); // end of IIFE

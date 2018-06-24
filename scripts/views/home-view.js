@@ -11,7 +11,6 @@ var app = app || {};
     // listner to ooen the single book view 
     $('div').on('click', '.book-in-list', function(e) {
       let idChoice = `${$(this).attr('id')}`; 
-      console.log(idChoice); 
       app.Book.fetchOne(idChoice, app.bookView.initOneBook);
 
       // let bookChoice = `${$(this).data('content')}`; 

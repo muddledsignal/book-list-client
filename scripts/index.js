@@ -35,8 +35,8 @@ var app = app || {};
     event.preventDefault();
     console.log(` You clicked ${$(this).data('content')}`);
     let link = `${$(this).data('content')}`; 
-    if (link === 'home') { app.bookView.initIndexPage();}
-    if (link === 'add-book') { app.bookView.initAddBookPage();}
+    if (link === 'home') { app.Book.fetchAll(app.bookView.initIndexPage);}
+    if (link === 'add-book') { app.bookView.initAddBookPage('new');}
     if (link === 'about') { module.showOnly('.about'); 
       
       console.log('What You Talkin bout!'); }
