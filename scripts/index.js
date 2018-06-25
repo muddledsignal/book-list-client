@@ -14,14 +14,12 @@ var app = app || {};
 
   module.showOnly = (selector) => {
     $('.container').hide();
-    $('.nav-menu').slideUp(350);
+    // $('.nav-menu').slideUp(350); // We could animate the nav, but class has not been set on navigation menu. 
     $(selector).show();
   }
 
   module.render = (templateId, data) => {
-    // if (templateId === 'one-book-template' || templateId === 'error-template' || !module.taskTemplate) {
       module.taskTemplate = Handlebars.compile($(`#${templateId}`).text());
-    // }
     return module.taskTemplate(data);
   }
 
@@ -30,20 +28,20 @@ var app = app || {};
     module.errorView.initErrorPage(err);
   }
 
-  // TODO: event listner for navigation 
+  // event listner for navigation 
   $('nav').on('click', '.tab', function(event) {
     event.preventDefault();
     console.log(` You clicked ${$(this).data('content')}`);
     let link = `${$(this).data('content')}`; 
-    if (link === 'home') { app.Book.fetchAll(app.bookView.initIndexPage);}
-    if (link === 'add-book') { app.bookView.initAddBookPage('new');}
-    if (link === 'about') { module.showOnly('.about'); 
-      
-      console.log('What You Talkin bout!'); }
+    if (link === 'home') app.Book.fetchAll(app.bookView.initIndexPage);
+    if (link === 'add-book') app.bookView.initAddBookPage('new');
+    if (link === 'about') module.showOnly('.about');
+  }); // end event listner for navigation 
 
-    // $(`#${$(this).data('content')}`).fadeIn();
-
-    
-  });
+  // listner to ooen the single book view 
+  $('div').on('click', '.book-in-list', function(e) {
+    let idChoice = `${$(this).attr('id')}`; 
+    app.Book.fetchOne(idChoice, app.bookView.initOneBook);
+  }); // end listner for single book view. 
 
 })(app); // end of IIFE
