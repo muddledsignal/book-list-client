@@ -65,42 +65,44 @@
 
     <main class="clearfix">
       <section class="book-view container">
-        <section id="book-count"></section> <!--displays below book info -->
+        <section id="book-count"></section>
         <section id="book-list"></section>
 
       </section><!-- book-view -->
       
       <section class="error-view container" >
         <h1>This is our error view! </h1> 
-      </section><!-- instructions said to use class not id-->
+      </section>
       
       <section class="one-book container">
         <!-- One Book View! -->
         <section id="one-book-holder"></section>
-          <button id="Modify" data-id="#">Change Details</button>
-          <button id="Delete" data-id="#">Delete</button>
+        <button id="Modify" data-id="#">Change Details</button>
+        <button id="Delete" data-id="#">Delete</button>
+        <h2 id="delete-response"></h2>
       </section>
 
-      <section class="add-book container" id="form-view">
+      <section class="add-book container">
         <form>
           <fieldset>
-            <legend>Add a new book</legend>
+            <legend id="new-or-modify">Add or Update a Book</legend>
             <legend>Title:<input id="title" type="text"></legend>
             <legend>Author:<input id="author" type="text"></legend>
             <legend>ISBN:<input id="isbn" type="text"></legend>
             <legend>Image URL:<input id="image-url" type="text"></legend>
             <legend>Description:<input id="description" type="text"></legend>
-            <button id="submit">Submit a new book</button>
+            <button id="submit">Submit or Modify a Book</button>
           </fieldset>
         </form>
+        <h2 id="add-book-response"></h2>
       </section>
     
       <section class="about container">
-        <h1>Some of my interests:</h1>
+        <h1>Some of our interests:</h1>
         <ul>
           <li>Coding</li>
-          <li>Sharing what I've learned</li>
-          <li>Hanging with my family</li>
+          <li>Sharing what we've learned</li>
+          <li>Hanging with my friends</li>
         </ul>
       </section>    
     </main>
@@ -129,8 +131,6 @@
       });
     </script>
 
-    <!-- app.Article.fetchAll(app.articleView.initIndexPage); -->
-    <!-- </script> -->
   </div>
 </body> 
 </html>

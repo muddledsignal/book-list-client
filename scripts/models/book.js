@@ -3,10 +3,6 @@ var app = app || {};
 
 (function(module){ // start of second IIFE from user/dev stories
 
-  // function errorCallback(err) { //inits error page if an error
-
-  // } // errorCallback
-
   function Book (rawDataObj) { // TODO?: refactor to .map?
     Object.keys(rawDataObj).forEach(key => {
       this[key] = rawDataObj[key]
@@ -43,7 +39,7 @@ var app = app || {};
   Book.fetchOne = (id, callback) => {
     $.get(`${module.ENVIRONMENT.apiUrl}/api/v1/books/${id}`)
       .then(results => {
-        // console.log(`fetchOne got a response: ${results}`);
+        console.log(`fetchOne got a response: ${results}`);
 
         Book.loadOne(results);
         callback();
